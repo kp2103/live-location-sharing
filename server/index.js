@@ -52,7 +52,7 @@ io.on('connection', (socket) => {
         latestLocations[roomId] = { lat, lng }
 
         // ✅ broadcast to others in room
-        socket.to(roomId).emit('receive-location', { lat, lng })
+        io.to(roomId).emit('receive-location', { lat, lng })
     })
 
     socket.on('disconnect', () => {
