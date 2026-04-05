@@ -1,5 +1,7 @@
 // const socket = io(`http://localhost:4000`);
-const socket = io(`https://live-location-sharing-1c2l.onrender.com`);
+const socket = io(`https://live-location-sharing-1c2l.onrender.com`,{
+    transports: ['websocket']
+});
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
