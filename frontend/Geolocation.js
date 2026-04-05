@@ -77,7 +77,7 @@ function throttling(fn, delay) {
     }
 }
 
-const throttleLocationHandler = throttling(updateLocation, 5000);
+const throttleLocationHandler = throttling(updateLocation, 2000);
 
 if (role === 'sender') {
     watchPositionId = navigator.geolocation.watchPosition(throttleLocationHandler, (error) => {
