@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Location sharing</title>
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    
+     <!-- Leaflet JS -->
+     <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+    <!-- Font awesome icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- socket io CDN -->
+    <script defer src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+     
+     <script defer type="module" src="./Geolocation.js"></script>
+     <!-- <script defer type="module" src="./index.js"></script> -->
+</head>
+<body>
+    <section class="container">
+
+        <header class="header">
+            <h2>
+                <i class="fa-solid fa-circle" style="color: rgb(206, 52, 57);"></i>
+                Live Location Tracker
+            </h2>
+
+            <button class="btn btn-red" >
+                <i class="fa-solid fa-clock" style="color: #ffffff;"></i>
+                Stop Tracking
+            </button>
+        </header>
+
+        <!-- map apper here -->
+        <main id="map"></main>
+
+        <!-- information container -->
+        <article class="tracking-panel">
+            <p>
+                <i class="fa-solid fa-location-dot" style="color: #ce3439;"></i>
+                <span>You are sharing your live location.</span>
+            </p>
+
+            <div class="tracking-panel--latlng">
+                <p>lat:<span id="lat"></span></p>
+                <p>lng:<span id="lng"></span></p>
+            </div>
+            <div>
+                <p>Link:<span id="share-link">Generate Your Link by clicking start sharing button</span></p>
+            </div>
+            <div class="tracking-panel--buttons">
+                <button class="btn btn-green" 
+                id="start-sharing"
+                type="button">
+                    <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
+                    Start Sharing
+                </button>
+                <button class="btn btn-red"
+                id="stop-sharing"
+                type="button">
+                    <i class="fa-solid fa-stop" style="color: #ffffff;"></i>
+                    Stop Sharing
+                </button>
+            </div>
+
+        </article>
+
+    </section>
+</body>
+</html>
