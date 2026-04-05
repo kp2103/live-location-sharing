@@ -31,6 +31,7 @@ io.on('connection',(socket)=>{
     //listen on send location event 
     socket.on('send-location',(data)=>{
 
+        console.log("sender send location:",{lat,lng})
         const {lat,lng,roomId} = data
 
         // emit the location

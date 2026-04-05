@@ -135,6 +135,7 @@ function updateLocation(position) {
 
 function sendLocation(lat, lng) {
 
+    console.log("sending data: ",{lat,lng})
     socket.emit('send-location', {
         roomId: roomId,
         lat,
